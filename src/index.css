@@ -78,11 +78,13 @@ html {
 
 .drop-menu{
   opacity: 0;
+  z-index: 10;
   position: absolute;
   top: 50px;
   width: 230px;
   padding: 30px;
   border-radius: 10px;
+  background-color: #fff;
   box-shadow: 0 5px 30px 0 rgba(108,135,135,.5);
   transition: all .2s ease-in;
 }
@@ -113,6 +115,35 @@ html {
   border-width: 0 1px 1px 0;
   border-color: #191e1e;
   transform: rotate(45deg) translateY(-6px)
+}
+
+.hero{
+  padding-top: 80px;
+  max-width: 1140px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.hero-title{
+  font-size: 3.75rem;
+  margin-bottom: 15px;
+  color: #191e1e;
+}
+
+.hero-text{
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.content {
+  background-color: #ebf2f2;
+  padding: 50px 0;
+}
+
+.projects-list{
+  max-width: 1140px;
+  margin: auto;
 }
 
 @media(max-width: 1100px){
