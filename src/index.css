@@ -1,9 +1,34 @@
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 500;
+  src: 
+    local("Open Sans"),
+    url("./assets/fonts/OpenSans-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-weight: 600;
+  src: 
+    local("Open Sans"),
+    url("./assets/fonts/OpenSans-SemiBold.ttf") format('truetype');
+}
+
 html {
   font-size: 100%;
-  font-family: Open Sans,sans-serif;
+  font-family: Open Sans, sans-serif;
   overflow-x: hidden;
 }
 
 #springlogo{
   height: 30px;
+}
+
+.main-header{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  position: relative;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #ebf2f2;
 }
