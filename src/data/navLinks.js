@@ -1,6 +1,6 @@
 const navLinks = [
     {
-        title: "Why Spring?",
+        title: "Why Spring",
         sublinks: [
             {title: 'Overview', url: '#'},
             {title: 'Microservices', url: '#'},
