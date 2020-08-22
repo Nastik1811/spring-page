@@ -144,6 +144,38 @@ html {
 .projects-list{
   max-width: 1140px;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.project-item{
+  display: block;
+  background-color: #fff;
+  border: 1px solid #d9e9e9;
+  width: 450px;
+  margin: 10px;
+  padding: 40px 30px;
+  margin-bottom: 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+.project-item:hover{
+  transform: translateY(-3px);
+  top: -3px;
+  box-shadow: 0 10px 20px 0 rgba(108,135,135,.2);
+
+}
+
+.project-info h3{
+  color: #191e1e;
+  margin-bottom: 5px;
+}
+.project-info p{
+  color: #333;
 }
 
 @media(max-width: 1100px){

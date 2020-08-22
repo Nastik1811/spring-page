@@ -1,5 +1,6 @@
 import React from 'react';
 import projects from '../../data/projects';
+import ProjectItem from './ProjectItem';
 
 const Projects = () => {
   return (
@@ -12,7 +13,7 @@ const Projects = () => {
       </section>
       <div className="content">
         <div className="projects-list">
-          {projects.map(p => <div>{p.name}</div>)}
+          {projects.map(p => <ProjectItem project={p}/>)}
         </div>
       </div>
     </div>

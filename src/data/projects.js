@@ -118,41 +118,6 @@ const projects = [
       name: 'Spring Web Services',
       description: 'Facilitates the development of contract-first SOAP web services.',
       url: '#'
-    },
-    {
-      name: 'Spring IO Platform',
-      description: 'Provides a cohesive, versioned platform for building modern applications. It is a modular, enterprise-grade distribution that delivers a curated set of dependencies.',
-      url: '#'
-    },
-    {
-      name: 'Spring Flex',
-      description: 'A project to make it easier to build Spring-powered Rich Internet Applications using Adobe Flex as the front-end client.',
-      url: '#'
-    },
-    {
-      name: 'Spring Integration Groovy DSL',
-      description: 'A Groovy based DSL for developing Spring Integration applications.',
-      url: '#'
-    },
-    {
-      name: 'Spring Integration Scala DSL',
-      description: 'A Scala based DSL for developing Spring Integration applications.',
-      url: '#'
-    },
-    {
-      name: 'Spring Scala',
-      description: 'A community run project that provides support for Spring framework development in Scala',
-      url: '#'
-    },
-    {
-      name: 'Spring Social',
-      description: 'Easily connects your applications with third-party APIs such as Facebook, Twitter, LinkedIn, and more.',
-      url: '#'
-    },
-    {
-      name: 'Spring XD',
-      description: 'Simplifies the development of big data applications by addressing ingestion, analytics, batch jobs and data export.',
-      url: '#'
     }
   ]
   
