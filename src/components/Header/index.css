@@ -93,15 +93,6 @@ a{
   transform: rotate(45deg) translateY(-6px)
 }
 
-
-
-.open-btn{
-  display: none;
-  width: 10px;
-  height: 10px;
-  background-color: black;
-}
-
 .overlay{
   display: none;
   position: fixed;
@@ -158,13 +149,32 @@ a{
   color: inherit;
 }
 
-.close-btn{
-  position: absolute;
-  right: 10px;
-  top: 10px;
+.open-btn{
+  display: none;
+  height: 25px;
+  width: 25px;
+  background-image: url('../../assets/images/menu.svg');
+  transition: background-image .1s linear;
 }
 
+.open-btn:hover{
+  background-image: url('../../assets/images/menu-hover.svg');
+}
 
+.close-btn{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  background-image: url('../../assets/images/close.svg');
+  background-position: center;
+  background-size: contain;
+}
+.submenu{
+  display: none;
+}
 @media(max-width: 900px){
   #springlogo{
     margin-top:5px;
@@ -177,6 +187,12 @@ a{
 
   .overlay{
     display: block;
+    transform: translateY(-110%);
+    transition: all .3s ease-in;
+  }
+
+  .overlay.expaned{
+    transform: translateY(0%);
   }
 
   .desktop-nav{
@@ -186,7 +202,7 @@ a{
   .drop-arrow{
     position: absolute;
     right: 10px;
-    top: 35px;
+    top: 25px;
     padding: 5px;
     border-style: solid;
     border-width: 0 2px 2px 0;
@@ -197,7 +213,8 @@ a{
   .drop-arrow.expaned{
     transform: rotate(45deg) scale(-1, -1)  ;
   }
-  .hidden{
-    display: none;
+  .submenu.expaned{
+    display: block;
+    visibility: visible;
   }
 }

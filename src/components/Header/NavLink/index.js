@@ -41,8 +41,8 @@ const NavLink = ({link}) => {
 
 export const Sidepane = ({links, expaned, onClose}) => {
     return(
-        <div className={expaned ? "overlay" : "overlay hidden"}>
-            <button className="close-btn" onClick={onClose}>Hide</button>
+        <div className={expaned ? "overlay expaned" : "overlay"}>
+            <button className="icon-btn close-btn" onClick={onClose}></button>
             <nav className="nav-box">
                 {links.map(link => <MenuLink link={link}/>)}
             </nav>
@@ -62,7 +62,7 @@ const MenuLink = ({link}) => {
                     </span>
                     <div className={open ? "drop-arrow expaned" : "drop-arrow"}></div>
                 </div>
-                <div className={open ? "submenu" : "submenu hidden"}>
+                <div className={open ? "submenu expaned" : "submenu"}>
                         {link.sublinks.map(l =>
                             <div className="sub-item">
                                 <a href={l.url} >

@@ -23,7 +23,7 @@ const Header = () => {
                     <img alt="Spring" id="springlogo" src={logo}/>
                 </a>
                 <Navbar links={navLinks}/>
-                <button className="open-btn" onClick={() => setMobileExpaned(true)}></button>
+                <button className="icon-btn open-btn" onClick={() => setMobileExpaned(true)}></button>
             </nav>
            <Sidepane links={navLinks} expaned={mobileExpaned} onClose={() => setMobileExpaned(false)}/>
         </header>
