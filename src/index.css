@@ -166,6 +166,19 @@ html {
   background-size: contain;
 }
 
+.message-container{
+  margin: 60px auto;
+  text-align: center;
+}
+
+.big-msg{
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: auto;
+  padding: 30px;
+}
+
+
 @media(max-width: 800px){
   .project-item{
     width: 100%;

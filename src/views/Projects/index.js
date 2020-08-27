@@ -3,6 +3,7 @@ import projects from '../../data/projects';
 import ProjectItem from './ProjectItem';
 import Hero from '../../components/Hero';
 import SearchBar from '../../components/Searchbar';
+import Message from '../../components/Message';
 
 const Projects = () => {
   const [filter, setFilter] = useState("")
@@ -21,6 +22,7 @@ const Projects = () => {
         <div className="projects-list">
           {filteredItems.map(p => <ProjectItem project={p}/>)}
         </div>
+        {filteredItems && <Message text="No results :("/>}
       </div>
     </div>
   );
