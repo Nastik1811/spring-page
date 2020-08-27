@@ -21,6 +21,7 @@ a{
   align-items: center;
   justify-content: space-between;
   max-width: 1140px;
+  padding: 0 20px;
 }
 
 
@@ -200,4 +201,3 @@ a{
     display: none;
   }
 }
-  
