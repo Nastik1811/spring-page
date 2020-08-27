@@ -28,6 +28,7 @@
 }
 body{
   width: 100%;
+  color: #191e1e;
 }
 html {
   font-size: 100%;
@@ -35,93 +36,10 @@ html {
   overflow-x: hidden;
 }
 
-#springlogo{
-  margin-top:5px;
-  height: 48px;
-}
-
-.main-header{
-  padding: 8px;
-  position: relative;
-  background: #fff;
-  border-bottom: 1px solid #ebf2f2;
-}
-
-.nav-container{
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1140px;
-}
-
-.nav-link{
-  font-weight: 600;
-  color: #191e1e;
-  text-decoration: none;
-  transition: all .2s;
-}
-
-.nav-link:hover{
-  color: #6db33f;
-}
-
-.nav-links{
-  list-style: none;
-  display: flex;
-}
-
-.nav-links>li{
-  position: relative;
-  margin-right: 40px;
-}
-
-.drop-menu{
-  opacity: 0;
-  z-index: 10;
-  position: absolute;
-  top: 50px;
-  width: 230px;
-  padding: 30px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 5px 30px 0 rgba(108,135,135,.5);
-  transition: all .2s ease-in;
-}
-
-.sublinks{
-  list-style: none;
-  padding: 0;
-}
-
-.sublinks>li{
-  margin-bottom: 6px;
-}
-
-.sublink{
-  margin-bottom: 3px;
-  font-weight: 500;
-}
-
-.dropdown:hover .drop-menu{
-  opacity: 1;
-}
-
-.drop-arrow{
-  display: inline-block;
-  padding: 3px;
-  margin-left: 5px;
-  border-style: solid;
-  border-width: 0 1px 1px 0;
-  border-color: #191e1e;
-  transform: rotate(45deg) translateY(-6px)
-}
-
 .hero{
-  padding-top: 80px;
+  padding:20px;
   max-width: 1140px;
-  margin: auto;
-  margin-bottom: 80px;
+  margin: 80px auto;
 }
 
 .hero-title{
@@ -143,6 +61,7 @@ html {
 
 .projects-list{
   max-width: 1140px;
+  padding: 0 20px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -176,11 +95,4 @@ html {
 }
 .project-info p{
   color: #333;
-}
-
-@media(max-width: 1100px){
-  #springlogo{
-    margin-top:5px;
-    height: 30px;
-  }
 }

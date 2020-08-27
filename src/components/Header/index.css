@@ -1,0 +1,203 @@
+
+a{
+  text-decoration: none;
+}
+
+#springlogo{
+  margin-top:5px;
+  height: 48px;
+}
+
+.app-header{
+  padding: 8px;
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #ebf2f2;
+}
+
+.nav-container{
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+}
+
+
+.desktop-nav{
+  list-style: none;
+  display: flex;
+  height: 57px;
+
+  padding-top: 20px;
+}
+
+.nav-item{
+  position: relative;
+  margin-right: 40px;
+  height: 100%;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #191e1e;
+  cursor: default;
+}
+
+.nav-link{
+  color: #191e1e;
+  transition: all .2s;
+  text-decoration: none;
+}
+.nav-link:hover{
+  color: #6db33f;
+}
+
+
+.drop-menu{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  top: 45px;
+  width: 230px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 5px 30px 0 rgba(108,135,135,.5);
+  transition: all .2s ease-in-out;
+}
+
+
+.sublink{
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+.nav-item:focus-within .drop-menu, 
+.nav-item:hover > .drop-menu,
+.drop-menu:hover
+{
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.drop-arrow{
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: #191e1e;
+  transform: rotate(45deg) translateY(-6px)
+}
+
+
+
+.open-btn{
+  display: none;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+}
+
+.overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #191e1e;
+  padding: 80px 60px 60px 40px;
+  overflow: scroll;
+  z-index: 1000;
+}
+
+.nav-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container{
+  width: 100%;
+}
+
+.menu-item{
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 15px 0;
+  border-bottom: 1px solid #666;
+  cursor: default;
+  position: relative;
+}
+
+.sub-item{
+  color: #98afae;
+  font-size: 1.3rem;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px 0;
+  cursor: default;
+}
+
+.sub-item a{
+  color: #98afae;
+  text-decoration: none;
+}
+.sub-item a:hover{
+  color: #6db33f;
+}
+
+.menu-item a{
+  color: inherit;
+}
+
+.close-btn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
+@media(max-width: 900px){
+  #springlogo{
+    margin-top:5px;
+    height: 30px;
+  }
+
+  .open-btn{
+    display: block;
+  }
+
+  .overlay{
+    display: block;
+  }
+
+  .desktop-nav{
+    display: none;
+  }
+
+  .drop-arrow{
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    border-color: #98afae;
+    transform: rotate(45deg);
+    transition: all .2s linear;
+  }
+  .drop-arrow.expaned{
+    transform: rotate(45deg) scale(-1, -1)  ;
+  }
+  .hidden{
+    display: none;
+  }
+}
+  
