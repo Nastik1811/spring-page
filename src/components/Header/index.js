@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import logo from '../../assets/images/spring-logo.svg';
 import navLinks from '../../data/navLinks';
-import NavLink, { Sidepane } from './NavLink';
 import './index.css';
+import Navbar from './Navbar';
+import Sidepane from './Sidepane'
 
-
-
-const Navbar = ({links}) => {
-    return(
-        <ul className="desktop-nav">
-            {links.map(link => <NavLink link={link} key={link.title}/>)}
-        </ul>
-    )
-}
 const Header = () => {
     const [mobileExpaned, setMobileExpaned] = useState(false)
     

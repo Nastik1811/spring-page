@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 
 const Dropdown = ({links}) => {
     return(
@@ -38,53 +38,5 @@ const NavLink = ({link}) => {
         </li>
     )
 }
-
-export const Sidepane = ({links, expaned, onClose}) => {
-    return(
-        <div className={expaned ? "overlay expaned" : "overlay"}>
-            <button className="icon-btn close-btn" onClick={onClose}></button>
-            <nav className="nav-box">
-                {links.map(link => <MenuLink link={link}/>)}
-            </nav>
-        </div>
-    )
-}
-
-const MenuLink = ({link}) => {
-    const [open, setOpen] = useState(false)
-
-    if(link.sublinks){
-        return(
-            <div className="container">
-                <div className="menu-item" onClick={() => setOpen(!open)}>
-                    <span >
-                        {link.title}
-                    </span>
-                    <div className={open ? "drop-arrow expaned" : "drop-arrow"}></div>
-                </div>
-                <div className={open ? "submenu expaned" : "submenu"}>
-                        {link.sublinks.map(l =>
-                            <div className="sub-item">
-                                <a href={l.url} >
-                                    {l.title}
-                                </a>
-                            </div>
-                        )}
-                </div>
-            </div>
-        )
-    }
-
-    return(
-        <div className="menu-item">
-            <a href={link.url} >
-                {link.title}
-            </a>
-        </div>
-    )
-
-}
-
-
 
 export default NavLink
