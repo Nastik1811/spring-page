@@ -22,7 +22,7 @@ const Projects = () => {
         <div className="projects-list">
           {filteredItems.map(p => <ProjectItem project={p}/>)}
         </div>
-        {filteredItems && <Message text="No results :("/>}
+        {filteredItems.length === 0 && <Message text="No results :("/>}
       </div>
     </div>
   );
