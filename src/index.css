@@ -178,6 +178,17 @@ html {
   padding: 30px;
 }
 
+.auth-container{
+  width: 500px;
+  margin: auto;
+  padding: 30px;
+  border: 2px solid #7a9494;
+}
+.auth{
+  display: flex;
+  flex-direction: column;
+}
+
 
 @media(max-width: 800px){
   .project-item{
