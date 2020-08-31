@@ -6,7 +6,7 @@ const Sidepane = ({links, expaned, onClose}) => {
         <div className={expaned ? "overlay expaned" : "overlay"}>
             <button className="icon-btn close-btn" onClick={onClose}></button>
             <nav className="nav-box">
-                {links.map(link => <MenuLink link={link}/>)}
+                {links.map(link => <MenuLink link={link} key={link.title}/>)}
             </nav>
         </div>
     )

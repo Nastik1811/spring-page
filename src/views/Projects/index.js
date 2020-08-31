@@ -6,9 +6,9 @@ import SearchBar from '../../components/Searchbar';
 import Message from '../../components/Message';
 
 const Projects = () => {
-  const [filter, setFilter] = useState("")
-  const filteredItems = useMemo(() =>  projects.filter(p => p.name.toLowerCase().includes(filter.toLowerCase()), [projects, filter]))
-
+  const [searchValue, setSearchValue] = useState("")
+  const filteredItems = useMemo(() =>  projects.filter(p => p.name.toLowerCase().includes(searchValue.toLowerCase())), [searchValue])
+  
   return (
     <div className="main-container">
       <Hero 
@@ -17,10 +17,10 @@ const Projects = () => {
         />
       <div className="content">
         <div className="search-container">
-          <SearchBar value={filter} onChange={setFilter} />
+          <SearchBar value={searchValue} onChange={setSearchValue} />
         </div>
         <div className="projects-list">
-          {filteredItems.map(p => <ProjectItem project={p}/>)}
+          {filteredItems.map(p => <ProjectItem project={p} key={p.name}/>)}
         </div>
         {filteredItems.length === 0 && <Message text="No results :("/>}
       </div>

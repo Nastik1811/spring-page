@@ -4,7 +4,7 @@ const Submenu = ({links, expaned}) => {
     return(
         <div className={expaned ? "submenu expaned" : "submenu"}>
                 {links.map(l =>
-                    <div className="sub-item">
+                    <div className="sub-item" key={l.title}>
                         <a href={l.url} >
                             {l.title}
                         </a>

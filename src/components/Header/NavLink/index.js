@@ -7,7 +7,7 @@ const Dropdown = ({links}) => {
             {
                 links.map(
                     link => 
-                    <div className="sublink">
+                    <div className="sublink" key={link.title}>
                         <a href={link.url} className="nav-link">
                             {link.title}
                         </a>
