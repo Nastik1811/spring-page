@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../actions'
 import { Redirect } from 'react-router-dom'
+import Input from './Input'
+import background from '../../assets/images/why-spring.svg'
 
 
 const Login = () => {
@@ -14,6 +16,7 @@ const Login = () => {
     const handleLogin = () => {
         dispatch(login(username, password))
     }
+
     if(isAuthorized){
         return(
             <Redirect to="/"/>
@@ -21,13 +24,18 @@ const Login = () => {
     }
     return(
         <div className="main-container">
-            <div className="auth-container">
-                <h2>Login</h2>
-                <form className="auth" onSubmit={handleLogin}>
-                    <input className="input" value={username} onChange={e => setUsername(e.target.value)}/>
-                    <input className="input" type="password" value={password} onChange={e => setPassword(e.target.value)}/>
-                    <button type="submit">Log in</button>
-                </form>
+            <div className="content ">
+                <div className="auth-container">
+                    <div className="img-container">
+                        <img src={background} alt="background" className="img"/>
+                    </div>
+                    <form className="auth" onSubmit={handleLogin}>
+                        <h1 className="container-title">Login</h1>
+                        <Input value={username} onChange={setUsername} label="Username"/>
+                        <Input type="password" value={password} onChange={setPassword} label="Password"/>
+                        <button className="submit-btn" type="submit" >Log In</button>
+                    </form>
+                </div>
             </div>
         </div>
     )

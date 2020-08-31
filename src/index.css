@@ -21,20 +21,45 @@
     local("Open Sans"),
     url("./assets/fonts/OpenSans-Bold.ttf") format('truetype');
 }
-
+:root{
+  --color-black: #191e1e;
+  --color-gray: #333;
+  --color-cyan-light: #d9e9e9;
+  --color-cyan: #9bb9b8;
+  --color-cyan-dark: #578a8a;
+  --color-green: #6db33f;
+}
 *{
   margin: 0;
   box-sizing: border-box;
 }
+
 body{
   width: 100%;
-  color: #191e1e;
+  color: var(--color-black);
+  height: 100%;
 }
 html {
   font-size: 100%;
   font-family: Open Sans, sans-serif;
   overflow-x: hidden;
+  height: 100%;
+}
+#root{
   min-height: 100%;
+  display: flex;
+}
+.app-container {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .hero{
@@ -46,19 +71,19 @@ html {
 .hero-title{
   font-size: 3.75rem;
   margin-bottom: 15px;
-  color: #191e1e;
+  color: var(--color-black);
 }
 
 .hero-text{
   font-size: 1.5rem;
   font-weight: 400;
-  color: #333;
+  color: var(--color-gray);
 }
 
 .content {
   background-color: #ebf2f2;
   padding: 30px 0;
-  min-height: 50vh;
+  flex-grow: 1;
 }
 
 .projects-list{
@@ -75,7 +100,7 @@ html {
 .project-item{
   display: flex;
   background-color: #fff;
-  border: 1px solid #d9e9e9;
+  border: 1px solid var(--color-cyan-light);
   width: 45%;
   margin: 10px;
   padding: 40px 30px;
@@ -98,11 +123,11 @@ html {
 
 .project-info h3{
   font-size: 1.5rem;
-  color: #191e1e;
+  color: var(--color-black);
   margin-bottom: 5px;
 }
 .project-info p{
-  color: #333;
+  color: var(--color-gray);
   line-height: 1.7em;
 }
 .project-icon{
@@ -142,7 +167,7 @@ html {
   background-color: transparent;
   border:none;
   border-bottom: 2px solid #d9e9e9;
-  color: #191e1e;
+  color: var(--color-black);
   padding: 5px;
   padding-left: 40px;
   transition: all .2s linear;
@@ -151,7 +176,7 @@ html {
 .search-input:focus{
   width: 100%;
   outline: none;
-  border-color: #7a9494;
+  border-color: var(--color-cyan-dark);
 }
 
 .searchbar::before{
@@ -178,17 +203,106 @@ html {
   padding: 30px;
 }
 
-.auth-container{
-  width: 500px;
-  margin: auto;
-  padding: 30px;
-  border: 2px solid #7a9494;
+.container-title{
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--color-gray);
 }
+
+.auth-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin:auto;
+  padding: 20px;
+  max-width: 1140px;
+
+  /* background-color: var(--color-cyan-light); */
+  
+}
+
 .auth{
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
+  flex-grow: 1;
+  max-width: 500px;
 }
 
+label{
+  cursor: pointer;
+}
+.input{
+  width: 100%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-black);
+  margin-bottom: 1em;
+  padding: 15px 10px 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent transparent #578a8a transparent ;
+  opacity: 80%;
+  border-radius: 5px;
+  transition: all .1s linear;
+}
+
+.input::placeholder{
+  color: var(--color-cyan);
+  font-weight: 500;
+}
+
+.input:focus{
+  outline: none;
+  border-color: var(--color-cyan-dark);
+  background-color: var(--color-cyan-light);
+  opacity: 100%;
+  border: 2px solid var(--color-cyan-dark);
+}
+
+.input-label{
+  color: var(--color-cyan-dark);
+  font-size: 1.3rem;
+  margin-left: ;
+}
+
+.img{
+  width: 500px;
+  height: auto;
+}
+.submit-btn{
+  background-color: var(--color-gray);
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  width: 150px;
+  height: 50px;
+  font-size: 1.5rem;
+  color: white;
+  margin: 20px auto 0;
+  transition: all .2s linear;
+}
+
+.submit-btn:focus, .submit-btn:hover{
+  background-color: var(--color-green);
+  outline: none;
+}
+
+
+.background-img{
+  background-image: url("./assets/images/why-spring.svg");
+  background-size: contain;
+  background-position-x: right;
+  background-repeat: no-repeat;
+}
+
+@media(max-width: 1100px){
+  .img{
+    width: 400px;
+  }
+}
 
 @media(max-width: 800px){
   .project-item{
@@ -200,6 +314,12 @@ html {
   .searchbar::before{
     height: 24px;
     width: 24px;
+  }
+  .img-container{
+    display: none;
+  }
+  .auth-container{
+    justify-content: center;
   }
 }
   
