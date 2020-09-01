@@ -3,6 +3,10 @@ a{
   text-decoration: none;
 }
 
+button{
+  cursor: pointer;
+}
+
 #springlogo{
   margin-top:5px;
   height: 48px;
@@ -27,10 +31,9 @@ a{
 .desktop-nav{
   list-style: none;
   display: flex;
-  width: 705px;
+  width: 715px;
   height: 57px;
   padding-top: 20px;
-  padding-right: 60px;
   justify-content: space-between;
 }
 
@@ -174,6 +177,37 @@ a{
 .submenu{
   display: none;
 }
+.desktop-nav .logout-btn{
+  background-color: transparent;
+  color: var(--color-cyan-dark);
+  font: inherit;
+  border: none;
+  padding: 0;
+  transition: all .1s linear;
+}
+
+.desktop-nav .logout-btn:focus, .desktop-nav .logout-btn:hover{
+  outline: none;
+  color: var(--color-green);
+}
+.overlay .logout-btn{
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  transition: all .1s linear;
+}
+
+.overlay .logout-btn:hover, .overlay .logout-btn:focus{
+  outline: none;
+  border-color: var(--color-green);
+  background-color: var(--color-green);
+}
+
 @media(max-width: 900px){
   #springlogo{
     margin-top:5px;

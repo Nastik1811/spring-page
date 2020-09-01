@@ -110,7 +110,8 @@ html {
   transition: all .2s linear;
 }
 
-.project-item:hover{
+.project-item:hover, .project-item:focus{
+  outline: none;
   transform: translateY(-3px);
   top: -3px;
   box-shadow: 0 10px 20px 0 rgba(108,135,135,.2);
@@ -265,7 +266,6 @@ label{
 .input-label{
   color: var(--color-cyan-dark);
   font-size: 1.3rem;
-  margin-left: ;
 }
 
 .img{
@@ -274,12 +274,11 @@ label{
 }
 .submit-btn{
   background-color: var(--color-gray);
-  cursor: pointer;
+  padding: 12px 25px;
   border: none;
   border-radius: 3px;
-  width: 150px;
-  height: 50px;
   font-size: 1.5rem;
+  font-weight: 600;
   color: white;
   margin: 20px auto 0;
   transition: all .2s linear;

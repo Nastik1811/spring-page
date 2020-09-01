@@ -15,14 +15,18 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
+        setUsername("")
+        setPassword("")
         dispatch(login(username, password))
     }
 
     if(isAuthorized){
+        localStorage.setItem("isAuthorized", isAuthorized)
         return(
             <Redirect to="/"/>
         )
     }
+
     return(
         <div className="main-container">
             <div className="content ">

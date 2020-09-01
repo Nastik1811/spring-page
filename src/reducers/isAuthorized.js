@@ -1,4 +1,5 @@
 export const LOGIN_REQUEST = "LOGIN_REQUEST"
+export const LOGOUT = "LOGOUT"
 
 export default (state = false, action) => {
     switch(action.type){
@@ -10,6 +11,8 @@ export default (state = false, action) => {
             else{
                 return false
             }
+        case LOGOUT:
+            return false
         default:
             return state
     }
