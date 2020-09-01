@@ -13,7 +13,8 @@ const Login = () => {
     const dispatch = useDispatch()
     const isAuthorized = useSelector(state => state.isAuthorized)
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault()
         dispatch(login(username, password))
     }
 

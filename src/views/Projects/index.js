@@ -4,10 +4,20 @@ import ProjectItem from './ProjectItem';
 import Hero from '../../components/Hero';
 import SearchBar from '../../components/Searchbar';
 import Message from '../../components/Message';
+import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 const Projects = () => {
   const [searchValue, setSearchValue] = useState("")
   const filteredItems = useMemo(() =>  projects.filter(p => p.name.toLowerCase().includes(searchValue.toLowerCase())), [searchValue])
+
+  const isAuthorized = useSelector(state => state.isAuthorized)
+  
+  if(!isAuthorized){
+    return(
+      <Redirect to="/login" />
+    )
+  }
   
   return (
     <div className="main-container">
