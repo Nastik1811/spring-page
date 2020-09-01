@@ -1,18 +1,32 @@
-import React, { useState, useMemo } from 'react';
-import projects from '../../data/projects';
+import React, { useState, useMemo, useEffect } from 'react';
 import ProjectItem from './ProjectItem';
 import Hero from '../../components/Hero';
 import SearchBar from '../../components/Searchbar';
 import Message from '../../components/Message';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { setProjects } from '../../actions';
+import { getProjects } from '../../data/projects';
 
 const Projects = () => {
   const [searchValue, setSearchValue] = useState("")
-  const filteredItems = useMemo(() =>  projects.filter(p => p.name.toLowerCase().includes(searchValue.toLowerCase())), [searchValue])
+  const projects = useSelector(state => state.projects)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(!projects){
+      const data = getProjects()
+      dispatch(setProjects(data))
+    }
+  }, [projects, dispatch])
+
+  const filteredItems = useMemo(
+    () =>  projects?.filter(
+      p => p.name.toLowerCase().includes(searchValue.toLowerCase())
+    ), [searchValue, projects])
 
   const isAuthorized = useSelector(state => state.isAuthorized)
-  
+
   if(!isAuthorized){
     return(
       <Redirect to="/login" />
@@ -30,9 +44,9 @@ const Projects = () => {
           <SearchBar value={searchValue} onChange={setSearchValue} />
         </div>
         <div className="projects-list">
-          {filteredItems.map(p => <ProjectItem project={p} key={p.name}/>)}
+          {filteredItems?.map(p => <ProjectItem project={p} key={p.name}/>)}
         </div>
-        {filteredItems.length === 0 && <Message text="No results :("/>}
+        {filteredItems?.length === 0 && <Message text="No results :("/>}
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
 import isAuthorized from "./isAuthorized";
-export default combineReducers({isAuthorized})
+import projects from "./projects";
+
+export default combineReducers({isAuthorized, projects})
 

@@ -120,8 +120,9 @@ const projects = [
       url: '#'
     }
   ]
-  
-export default projects
+
+
+export const getProjects = () => projects
 
 
 
